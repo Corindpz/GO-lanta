@@ -1,0 +1,80 @@
+{{define "creator"}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap" rel="stylesheet">
+    <title>creator</title>
+</head>
+<header>
+    <h1>Survivors</h1>
+</header>
+<script>
+    function showImageGallery() {
+  var gallery = document.getElementById("image-gallery");
+  var fileInput = document.getElementById("file-upload");
+
+  // Afficher la galerie et masquer le bouton et le champ de fichier
+  gallery.style.display = "flex";
+  fileInput.style.display = "none";
+}
+</script>
+<body>
+    <div class="container">
+    <form class="form" method="post" action="/form/treatment" enctype="multipart/form-data">
+        <label>Nom :</label>
+        <input class="age"
+            type="text" 
+            name="nom">
+
+
+        <label for="categorie">Equipe :</label>
+            <select class="age" class="select" name="categorie" id="categorie" multiple>
+                 <option value="Banane">Team Banane</option>
+                 <option value="Pomme">Team Pomme</option>
+                 <option value="Mangue">Team Mangue</option>
+            </select>
+
+        <input 
+            class="age"
+            type="number" 
+            name="age"
+            min="18" 
+            max="120"
+            step="1">
+
+        <label for="Profession">Profession :</label>
+
+            <textarea class="age" id="profession" name="profession" rows="1" cols="50">
+        </textarea>
+
+    
+        <label for="Motivation">Motivation :</label>
+
+            <textarea class="age" id="motivation" name="motivation" rows="7" cols="100">
+        </textarea>
+
+        <div class="input-file">
+        <button onclick="showImageGallery()">Sélectionner une image</button>
+            <label for="file-upload">Image de profil:</label>
+            
+            <div id="image-gallery">
+                <img src="../static/asset/images/pnj.png" onclick="selectImage(this)">
+                <img src="../static/asset/images/pnj2.png" onclick="selectImage(this)">
+                <img src="../static/asset/images/pnj3.png" onclick="selectImage(this)">
+            </div>
+            <div id="selected-image-preview"></div>
+        </div>
+        <script defer src="../static/script.js"></script>
+        <button class="age" type="submit">Ajouter aventurier</button>
+    </form>
+    
+    </div>
+</body>
+</html>
+{{end}}
