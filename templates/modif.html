@@ -1,0 +1,42 @@
+{{define "modif"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aventuriers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/modif.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="retour" href="/persos">Retour</a>
+<h1>Modification d'un personnage</h1>
+<form action="/submit_modif" method="post">
+    <label for="nom">Nom :</label>
+    <input value="{{.Nom}}" type="text" id="nom" name="nom" required>
+
+    <label for="prenom">Prénom :</label>
+    <input value="{{.Prenom}}" type="text" id="prenom" name="prenom" required>
+
+    <label for="age">Âge :</label>
+    <input value="{{.Age}}" type="number" id="age" name="age" required>
+
+
+    <label for="sexe">Sexe :</label>
+    <select id="sexe" name="sexe" required>
+        <option value="homme"{{if eq .Sexe "homme"}} selected{{end}}>Homme</option>
+        <option value="femme"{{if eq .Sexe "femme"}} selected{{end}}>Femme</option>
+    </select>
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4">{{.Description}}</textarea>
+
+    <input type="hidden" id="id" name="id" value="{{.ID}}">
+
+    <button type="submit">Mettre à jour</button>
+</form>
+
+</body>
+</html>
+{{end}}

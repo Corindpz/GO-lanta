@@ -1,0 +1,34 @@
+{{define "persos"}}
+<html>
+<head>
+    <title>Aventuriers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/accueil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Climate+Crisis&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="retour" href="/accueil">Retour</a>
+<h1>Liste des personnages</h1>
+{{if .Aventuriers}}
+<ul>
+    {{range .Aventuriers}}
+    <li>
+        <h2>{{.Nom}} {{.Prenom}}</h2>
+        <p>Âge: {{.Age}}</p>
+        <p>Sexe: {{.Sexe}}</p>
+        <p>Description: {{.Description}}</p>
+        <a  class="buttons" href="/delete?id={{.ID}}">Supprimer</a>
+        <a  class="buttons" href="/modif?id={{.ID}}">Modifier</a>
+    </li>
+    {{end}}
+</ul>
+{{else}}
+<p class="error">Aucun aventurier trouvé.</p>
+{{end}}
+</body>
+</html>
+{{end}}

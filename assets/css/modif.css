@@ -1,0 +1,113 @@
+*{
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url(../background.png);
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 5px white;
+    border-radius: 7px;
+    width: 30vw;
+    height: 73vh;
+    backdrop-filter: blur(10px);
+    font-size: 1.7vh;
+}
+
+input{
+    border-radius: 10px;
+    background-color: white;
+    border: solid black 3px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    border-radius: 10px;
+    background-color: white;
+    border: solid black 3px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+
+label{
+    padding-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+select{
+    border-radius: 10px;
+    background-color: white;
+    border: solid black 3px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.retour{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 130%;
+    text-decoration: none;
+    color: #fff;
+    padding: 2%;
+    background-color: chocolate;
+    border: #fff 3px solid;
+    border-radius: 60px;
+    opacity: 0.8;
+    animation: zoomOut 0.5s ease 0s 1 normal backwards;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.retour:hover{
+    opacity: 1;
+    transition: 0.5s;
+    cursor: pointer;
+    animation: zoom 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1)
+    }
+    100%{
+        transform: scale(1.1)
+    }
+}
+
+@keyframes zoomOut {
+    0%{
+        transform: scale(1.1)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
+h2{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+}
